@@ -19,6 +19,6 @@ const bookmarkSchema = new Schema({
 const Bookmark = model("Bookmark", bookmarkSchema);
 
 //-------------------------------------------
-// Export Menu Model
+// Export Bookmark Model
 //-------------------------------------------
 module.exports = Bookmark

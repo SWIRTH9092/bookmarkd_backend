@@ -10,13 +10,13 @@ mongoose.connection.on('open', () => {
         { title: "General Assembly Bookmarkd Assignment",
           url: "https://turmeric.seircohort.com/react-fundamentals/week-17/day-2/lab"  },
         { title: "Bookmark backend GitHub code",
-          url: "https://github.com/SWIRTH9092/bookmarkd_Lab"  },
+          url: "https://github.com/SWIRTH9092/bookmarkd_backend"  },
       ]
       
       // Delete all Bookmark Items
-      Menu.deleteMany({}, (err, data) => {
-        // Create new Menu Item once old Menu Items are deleted
-        Menu.create(startingBookmark, (err, data) =>{
+      Bookmark.deleteMany({}, (err, data) => {
+        // Create new Bookmark Item once old Bookmark Items are deleted
+        Bookmark.create(startingBookmark, (err, data) =>{
             mongoose.connection.close();
         })
     })    
