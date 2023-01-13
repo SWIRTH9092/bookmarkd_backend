@@ -12,6 +12,8 @@ const express = require("express");
 // create application object
 const app = express ();
 
+//  model for bookmark
+const Bookmark = require("./models/bookmark")
 
 //--------------------------------------------
 //  Routes
