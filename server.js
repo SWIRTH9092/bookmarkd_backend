@@ -18,6 +18,9 @@ const Bookmark = require("./models/bookmark")
 const cors = require("cors");
 const morgan = require("morgan");
 
+// router dependencies
+const GeneralGetRouter = require("./controllers/generalget")
+
 //--------------------------------------------
 //  Added Middleware
 //--------------------------------------------
@@ -29,9 +32,9 @@ app.use(express.json()); // parse json bodies
 //  Routes
 //--------------------------------------------
 // create test route
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
+app.use("/", GeneralGetRouter)
+
+
 
 
 //--------------------------------------------
