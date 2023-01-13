@@ -15,6 +15,16 @@ const app = express ();
 //  model for bookmark
 const Bookmark = require("./models/bookmark")
 
+const cors = require("cors");
+const morgan = require("morgan");
+
+//--------------------------------------------
+//  Added Middleware
+//--------------------------------------------
+app.use(cors()); // to prevent cors errors, open access to all origins
+app.use(morgan("dev")); // logging
+app.use(express.json()); // parse json bodies
+
 //--------------------------------------------
 //  Routes
 //--------------------------------------------
