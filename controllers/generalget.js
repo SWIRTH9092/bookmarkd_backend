@@ -1,22 +1,14 @@
 //----------------------------
 //  Import dependencies
 //----------------------------
-const express = require("express")
+// const express = require("express")
 
-// for MongoDB database
-const Bookmark = require("../models/bookmark")
-
-//----------------------------
-//  Create Route
-//----------------------------
-const router = express.Router();
-
-router.get("/", (req, res) => {
+const generalGet = (req, res) => {
     res.send("hello world");
-});
+    }
 
 //----------------------------
-//  Export the Router
+//  Export controller function
 //----------------------------
 
-module.exports = router;
+module.exports = generalGet
