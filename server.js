@@ -2,6 +2,7 @@
 //  Dependencies
 //--------------------------------------
 
+require("dotenv").config();
 //get .env variables
 const{ PORT = 3000 } = process.env;
 
