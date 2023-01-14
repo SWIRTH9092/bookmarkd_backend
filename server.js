@@ -19,12 +19,12 @@ const cors = require("cors");
 const morgan = require("morgan");
 
 // controller Dependencies
-const generalGet = require("./controllers/generalGet")
-const bookmarkIndex = require("./controllers/bookmarkIndex")
-const bookmarkPost = require("./controllers/bookmarkPost")
-const bookmarkUpdate = require("./controllers/bookmarkUpdate")
-const bookmarkDelete = require("./controllers/bookmarkDelete")
-const bookmarkShow = require("./controllers/bookmarkShow")
+const generalGet = require("./controllers/general/generalGet")
+const bookmarkIndex = require("./controllers/bookmark/bookmarkIndex")
+const bookmarkPost = require("./controllers/bookmark/bookmarkPost")
+const bookmarkUpdate = require("./controllers/bookmark/bookmarkUpdate")
+const bookmarkDelete = require("./controllers/bookmark/bookmarkDelete")
+const bookmarkShow = require("./controllers/bookmark/bookmarkShow")
 
 
 //--------------------------------------------
@@ -37,13 +37,6 @@ app.use(express.json()); // parse json bodies
 //--------------------------------------------
 //  Routes
 //--------------------------------------------
-// create test route
-// app.use("/", GeneralGetRouter)   //"hello World"
-// app.use("/Bookmark",IndexRouter)
-
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
 
 app.get("/", generalGet)
 app.get('/bookmark', bookmarkIndex);  // get all 
