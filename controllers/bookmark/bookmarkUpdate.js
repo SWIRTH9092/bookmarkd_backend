@@ -10,7 +10,6 @@ const Bookmark = require("../../models/bookmark")
 const bookmarkUpdate = async (req, res) => {
     try {
         //  update bookmark
-        console.log (req.params.id, req.body)
         res.json (
             await Bookmark.findByIdAndUpdate(req.params.id, req.body, {new: true}));
     } catch (error) {
