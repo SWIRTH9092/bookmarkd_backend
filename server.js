@@ -1,30 +1,24 @@
 //--------------------------------------------
 //  Dependenices
 //--------------------------------------------
-// get .env variables
 require("dotenv").config()
-// pull Port from .env, give deafault value of 4000
-const { PORT = 3000, DATABASE_URL } = process.env;
 
 //import express
 const express = require("express");
+const middleware= require("./utils/middleware");
 
+//--------------------------------------------
 // create application object
+//--------------------------------------------
 const app = express ();
 
-//  model for bookmark
-const Bookmark = require("./models/bookmark")
-
 //--------------------------------------------
-//  Routes
+// Middleware
 //--------------------------------------------
-// create test route
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
-
+middleware(app);
 
 //--------------------------------------------
 //  Listner
 //--------------------------------------------
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`))
+const PORT = process.envPORT || 3000;
+app.listen(PORT, () => {console.log(`🧏‍♀️ listening on PORT ${PORT}`)})

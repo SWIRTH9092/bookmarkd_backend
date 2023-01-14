@@ -1,0 +1,35 @@
+//-------------------------------------------
+// Import Our Dependencies
+//-------------------------------------------
+const express = require('express') // bring this in so we can make our router
+
+//-------------------------------------------
+// controller dependencies
+//-------------------------------------------
+const bookmarkIndex = require ("../controllers/bookmark/bookmarkIndex")
+const bookmarkPost = require("../controllers/bookmark/bookmarkPost")
+const bookmarkUpdate = require("../controllers/bookmark/bookmarkUpdate")
+const bookmarkDelete = require("../controllers/bookmark/bookmarkDelete")
+const bookmarkShow = require("../controllers/bookmark/bookmarkShow")
+
+//-------------------------------------------
+// create Route
+//-------------------------------------------
+const router = express.Router() 
+
+//-------------------------------------------
+// routers
+//-------------------------------------------
+//**  note bookmark is no longer specified in the router - 
+//    if bookmark was listed here, you would get a 404 - not found
+
+router.get('/', bookmarkIndex);  // get all 
+router.post('/', bookmarkPost);  // Create New 
+router.put('/:id', bookmarkUpdate); //Update Existing
+router.delete('/:id', bookmarkDelete)  // delete Existing
+router.get('/:id', bookmarkShow)  // Show a specific item
+
+//-------------------------------------------
+// Export the Router
+//-------------------------------------------
+module.exports = router;
