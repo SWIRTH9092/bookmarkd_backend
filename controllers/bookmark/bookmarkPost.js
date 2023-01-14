@@ -4,7 +4,7 @@
 // const express = require("express")
 
 // for MongoDB database
-const Bookmark = require("../models/bookmark")
+const Bookmark = require("../../models/bookmark")
 
 const bookmarkPost = async (req, res) => {
     try {
